@@ -1,0 +1,4 @@
+# Windows 에서 클론해도 셸 스크립트는 LF 를 유지한다.
+# core.autocrlf=true 환경에서 CRLF 로 변환되면 Git Bash 가 줄 끝의 \r 을
+# 명령·경로의 일부로 읽어 deploy.sh 가 통째로 실행되지 않는다.
+*.sh text eol=lf

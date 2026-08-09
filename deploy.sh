@@ -40,10 +40,19 @@ if [ -z "${KSKILL_FORESTTRIP_ID:-}" ] || [ -z "${KSKILL_FORESTTRIP_PASSWORD:-}" 
 fi
 
 # ── 인터프리터 (프로젝트 venv 고정) ──────────────────────────────────
-PYTHON="${PYTHON:-$PWD/.venv/bin/python}"
+# venv 의 실행파일 위치는 OS 마다 다르다 — POSIX 는 .venv/bin/python,
+# Windows(Git Bash) 는 .venv/Scripts/python.exe 다. 둘 다 찾아본다.
+if [ -z "${PYTHON:-}" ]; then
+  if [ -x "$PWD/.venv/bin/python" ]; then
+    PYTHON="$PWD/.venv/bin/python"
+  else
+    PYTHON="$PWD/.venv/Scripts/python.exe"
+  fi
+fi
 if [ ! -x "$PYTHON" ]; then
   log "✗ venv 가 없습니다. README 의 설치 절차를 먼저 실행하세요:"
-  log "    python3.13 -m venv .venv && .venv/bin/pip install -r requirements.txt && .venv/bin/python -m playwright install chromium"
+  log "    [macOS] python3.13 -m venv .venv && .venv/bin/pip install -r requirements.txt && .venv/bin/python -m playwright install chromium"
+  log "    [Windows] py -3 -m venv .venv && .venv/Scripts/python.exe -m pip install -r requirements.txt && .venv/Scripts/python.exe -m playwright install chromium"
   exit 1
 fi
 
