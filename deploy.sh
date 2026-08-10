@@ -12,6 +12,14 @@
 set -uo pipefail
 cd "$(dirname "$0")"
 
+# 파이썬 UTF-8 모드 강제.
+# Windows 한국어 로케일에서는 파이썬의 stdout·open() 기본 인코딩이 cp949 라,
+# 조회 결과를 `> data/raw.json` 로 받으면 CP949 로 기록된다. 뒤이어 이 파일을
+# encoding="utf-8" 로 읽는 batch/*.py 가 UnicodeDecodeError 로 죽는다.
+# macOS·Linux 는 이미 UTF-8 이므로 이 설정이 동작을 바꾸지 않는다.
+export PYTHONUTF8=1
+export PYTHONIOENCODING=utf-8
+
 PUSH=1
 for a in "$@"; do
   case "$a" in
