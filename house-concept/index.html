@@ -1,0 +1,220 @@
+<title>박공주택 개념평면</title>
+<meta name="description" content="200평 자연녹지 대지 4인 가족 30평 모던 박공주택 개념설계 도면과 검산">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans+KR:wght@400;600;700&display=swap">
+<style>
+:root{
+  --paper:#f3f5f2; --sheet:#fbfcfa; --ink:#1d2622; --ink2:#4d5a54; --rule:#c9d1cb;
+  --pine:#2e6a50; --pine-soft:#dce9e1; --timber:#a8743f; --timber-soft:#efe2d2; --warn:#a4561d; --ok:#2e6a50;
+  --wall:#2a332f; --f-liv:#fbf6ea; --f-bed:#eef2f7; --f-kid:#eaf3ec; --f-wet:#e5eff3; --f-circ:#f2f2ef;
+  --fur:#7b8a83; --tall:rgba(46,106,80,.12);
+  --display:"Gowun Batang","Noto Serif KR",serif; --body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  color-scheme:dark; --paper:#121715; --sheet:#171d1a; --ink:#e3e9e5; --ink2:#a3b0a9; --rule:#34403a;
+  --pine:#7cc4a0; --pine-soft:#1f3329; --timber:#d6a36d; --timber-soft:#3a2d1f; --warn:#e3a06a; --ok:#7cc4a0;
+  --wall:#c9d3cd; --f-liv:#231f17; --f-bed:#1b2129; --f-kid:#1a261e; --f-wet:#18242a; --f-circ:#1e2220;
+  --fur:#8e9c95; --tall:rgba(124,196,160,.14);}}
+:root[data-theme="dark"]{
+  color-scheme:dark; --paper:#121715; --sheet:#171d1a; --ink:#e3e9e5; --ink2:#a3b0a9; --rule:#34403a;
+  --pine:#7cc4a0; --pine-soft:#1f3329; --timber:#d6a36d; --timber-soft:#3a2d1f; --warn:#e3a06a; --ok:#7cc4a0;
+  --wall:#c9d3cd; --f-liv:#231f17; --f-bed:#1b2129; --f-kid:#1a261e; --f-wet:#18242a; --f-circ:#1e2220;
+  --fur:#8e9c95; --tall:rgba(124,196,160,.14);}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.65;margin:0;padding-inline:16px}
+.wrap{max-width:1040px;margin:0 auto;padding-block:40px 64px;display:grid;gap:44px}
+header{display:grid;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:22px}
+.stamp{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--warn);text-transform:uppercase}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,4.6vw,44px);line-height:1.2;margin:0;text-wrap:balance}
+h2{font-family:var(--display);font-size:24px;margin:0;text-wrap:balance;display:flex;gap:12px;align-items:baseline}
+h2 .code{font-family:var(--mono);font-size:13px;color:var(--pine);border:1px solid var(--pine);padding:1px 7px;border-radius:3px}
+h3{font-size:15px;margin:0}
+p{margin:0;max-width:68ch}
+.lede{color:var(--ink2);font-size:16px}
+section{display:grid;gap:16px}
+.sheet{background:var(--sheet);border:1px solid var(--rule);border-radius:4px;padding:16px;overflow-x:auto}
+.sheet svg{display:block;width:100%;min-width:640px;height:auto}
+.grid2{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.kv div{background:var(--sheet);padding:12px 14px;display:grid;gap:2px}
+.kv b{font-family:var(--mono);font-size:20px;font-variant-numeric:tabular-nums}
+.kv span{font-size:12px;color:var(--ink2);letter-spacing:.02em}
+.tbl{overflow-x:auto;border:1px solid var(--rule);background:var(--sheet)}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:14px}
+th,td{padding:9px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+th{font-size:12px;letter-spacing:.04em;color:var(--ink2);font-weight:600;background:var(--paper)}
+td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+tr.sum td{font-weight:700;border-top:2px solid var(--ink)}
+.diff{color:var(--warn)}
+ul.checks{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+ul.checks li{display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:start}
+.pill{font-family:var(--mono);font-size:11px;padding:1px 0;text-align:center;border-radius:3px;font-weight:600}
+.pill.ok{background:var(--pine-soft);color:var(--ok)}
+.pill.ng{background:var(--timber-soft);color:var(--warn)}
+.callout{border-left:3px solid var(--timber);background:var(--timber-soft);padding:12px 16px;display:grid;gap:6px}
+.list{margin:0;padding-left:20px;display:grid;gap:4px;max-width:72ch}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:12px;color:var(--ink2)}
+.legend i{display:inline-block;width:14px;height:10px;border:1px solid var(--rule);margin-right:6px;vertical-align:-1px}
+footer{font-size:12.5px;color:var(--ink2);border-top:1px solid var(--rule);padding-top:16px;display:grid;gap:6px}
+a{color:var(--pine)}
+/* SVG */
+svg text{font-family:var(--body)}
+.wall{fill:var(--wall)} .floor{stroke:none} .f-liv{fill:var(--f-liv)} .f-bed{fill:var(--f-bed)} .f-kid{fill:var(--f-kid)}
+.f-wet{fill:var(--f-wet)} .f-circ{fill:var(--f-circ)}
+.openceil{fill:none;stroke:var(--timber);stroke-width:1;stroke-dasharray:2 4}
+.attic-proj{fill:none;stroke:var(--pine);stroke-width:1.4;stroke-dasharray:9 5}
+.projtxt{fill:var(--pine);font-size:10.5px}
+.open{fill:var(--sheet)} .door{stroke:var(--ink);stroke-width:1.6} .swing{fill:none;stroke:var(--ink2);stroke-width:.8;stroke-dasharray:3 2}
+.win{fill:var(--sheet);stroke:var(--ink);stroke-width:1} .winl{stroke:var(--ink);stroke-width:.8}
+.tread{stroke:var(--ink2);stroke-width:.8} .stairmid{stroke:var(--ink2);stroke-width:.8}
+.arrow{fill:none;stroke:var(--warn);stroke-width:1.4} .ahp{fill:var(--warn)}
+.up{fill:var(--warn);font-size:10px;font-weight:700;font-family:var(--mono)} .upsm{fill:var(--warn);font-size:9.5px}
+.fur-fix{fill:var(--sheet);stroke:var(--fur);stroke-width:1} .fur-loose{fill:none;stroke:var(--fur);stroke-width:1;stroke-dasharray:4 2}
+.fur-wet{fill:none;stroke:var(--fur);stroke-width:1}
+.chair{fill:none;stroke:var(--fur);stroke-width:.8}
+.fur{fill:var(--ink2);font-size:9.5px}
+.drain{stroke:var(--fur);stroke-width:2.5;stroke-dasharray:1 2}
+.rname{fill:var(--ink);font-size:13.5px;font-weight:700} .rarea{fill:var(--ink2);font-size:11px;font-family:var(--mono)}
+.rsub{fill:var(--ink2);font-size:10px}
+.dim{stroke:var(--ink2);stroke-width:.7} .dimtick{stroke:var(--ink);stroke-width:1.1} .dimtxt{fill:var(--ink);font-size:10.5px;font-family:var(--mono)}
+.road{fill:var(--rule)} .park{fill:none;stroke:var(--ink2);stroke-width:1;stroke-dasharray:6 3}
+.path{stroke:var(--ink2);stroke-width:1;stroke-dasharray:2 3}
+.deck{fill:var(--timber-soft);stroke:var(--timber);stroke-width:1} .deckl{stroke:var(--timber);stroke-width:.4;opacity:.55}
+.ctx{fill:var(--ink2);font-size:12px} .ctxb{fill:var(--ink);font-size:12px;font-weight:600} .ctxs{fill:var(--ink2);font-size:10.5px}
+.note{fill:var(--ink2);font-size:10.5px}
+.nc{fill:var(--sheet);stroke:var(--ink);stroke-width:1} .na{fill:var(--ink)} .ntxt{fill:var(--ink);font-size:11px;font-weight:700;font-family:var(--mono)}
+.roofarea{fill:none;stroke:var(--rule);stroke-width:1;stroke-dasharray:4 4}
+.lowzone{fill:var(--f-circ)} .void{fill:var(--sheet);stroke:var(--ink2);stroke-width:1}
+.tall{fill:var(--tall)} .rail{stroke:var(--warn);stroke-width:2.2} .outline{fill:none;stroke:var(--wall);stroke-width:4}
+.skylight{fill:none;stroke:var(--ink2);stroke-width:1;stroke-dasharray:3 2}
+.ground{fill:var(--rule)} .wallsec{fill:var(--wall)} .roofsec{fill:var(--wall)} .slab{fill:var(--ink2)}
+.knee{stroke:var(--ink2);stroke-width:2} .ceil{stroke:var(--ink2);stroke-width:1;stroke-dasharray:5 3}
+.h18{stroke:var(--pine);stroke-width:1;stroke-dasharray:6 3} .tallsec{fill:var(--tall)}
+.winsec{fill:var(--f-wet);stroke:var(--ink);stroke-width:1} .proj{fill:none;stroke:var(--ink2);stroke-width:.8;stroke-dasharray:3 3}
+.sectxt{fill:var(--ink2);font-size:11px;font-family:var(--mono)} .secroom{fill:var(--ink);font-size:13px;font-weight:700}
+.secdir{fill:var(--ink);font-size:13px;font-weight:700}
+@media (max-width:560px){.wrap{padding-block:24px 48px;gap:36px} h2{font-size:21px}}
+</style>
+<div class="wrap">
+<header>
+  <div class="stamp">개념설계 · 치수 확정 전 · 인허가/시공용 도면 아님</div>
+  <h1>200평 자연녹지의 30평 모던 박공주택</h1>
+  <p class="lede">1층 외곽 11.2 × 7.2m 직사각형 하나에 4인 가족의 모든 필수 생활을 담고, 거실은 박공 용마루까지 열고,
+  홀·침실 상부에 6평 다락을 얹은 개념 평면입니다. 모든 도면과 면적표는 같은 좌표 데이터(<code>build.py</code>)에서 생성해 서로 어긋나지 않습니다.</p>
+</header>
+
+<section>
+  <h2><span class="code">A</span>요구조건 요약</h2>
+  <div class="kv">
+    <div><b>661.2㎡</b><span>대지 200평 · 평탄 직사각형 가정</span></div>
+    <div><b>80.64㎡</b><span>건축면적 24.4평 · 11.2×7.2m</span></div>
+    <div><b>12.2%</b><span>건폐율 (자연녹지 상한 20%)</span></div>
+    <div><b>19.82㎡</b><span>다락 실사용 6.0평</span></div>
+    <div><b>30.4평</b><span>물리적 실내 바닥 합계(외벽 포함 1층 + 다락)</span></div>
+    <div><b>12.2–15.2%</b><span>용적률 (다락 산입 여부에 따라)</span></div>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>항목</th><th>요구</th><th>이번 도면의 반영</th></tr></thead>
+    <tbody>
+    <tr><td>가족·용도</td><td>부부 + 자녀 2, 상시거주, 노후 무장애</td><td>필수 생활 전부 1층, 현관·욕실·데크 무단차, 주동선 1.0m</td></tr>
+    <tr><td>침실</td><td>부부침실 1, 자녀 공동방 1(침대 2·책상 2)</td><td>부부 10.9㎡(북동), 자녀 13.3㎡(남동)</td></tr>
+    <tr><td>공용 공간</td><td>남향 오픈 LDK, 대면형 아일랜드, 6인 식탁, 높은 거실</td><td>LDK 28.6㎡, 거실·식당 상부 용마루까지 오픈(최고 약 5.6m)</td></tr>
+    <tr><td>서비스</td><td>공용욕실 1, 세탁·건조실, 기계실</td><td>북측 한 줄에 모음. 욕실·싱크대·세탁실이 벽 하나씩 맞닿음</td></tr>
+    <tr><td>다락</td><td>6평, 자녀 놀이·취미, 고정식 U자 계단</td><td>19.8㎡, 홀·침실 상부. 계단 단높이 169mm·디딤 250mm</td></tr>
+    <tr><td>외부</td><td>남향 넓은 데크·마당, 야외주차 1</td><td>데크 22.2㎡(거실·식당 직결), 북측 주차 2.6×5.0m</td></tr>
+    <tr><td>예산</td><td>총사업비 3억원 이내</td><td>단일 직사각형 + 단일 박공, 습식공간 집중 배치 (공사비 산정은 하지 않음)</td></tr>
+    </tbody></table></div>
+</section>
+
+<section>
+  <h2><span class="code">B</span>1층 개념 평면도</h2>
+  <div class="sheet"><svg viewBox="0 0 760 1040" role="img" aria-label="1층 개념 평면도" xmlns="http://www.w3.org/2000/svg"><title>1층 개념 평면도</title><rect class="road" x="16.0" y="21.2" width="712.8" height="43.2" /><text class="ctx" x="372.4" y="49.3" text-anchor="middle">북측 진입도로 (가정)</text><rect class="park" x="124.0" y="75.2" width="140.4" height="270.0" /><text class="ctxb" x="194.2" y="215.6" text-anchor="middle">야외주차</text><text class="ctxs" x="194.2" y="234.5" text-anchor="middle">2.6×5.0m</text><text class="ctxs" x="275.2" y="307.4" text-anchor="start">진입로 →</text><rect class="deck" x="70.0" y="798.8" width="399.6" height="162.0" /><line class="deckl" x1="70.0" y1="805.3" x2="469.6" y2="805.3"/><line class="deckl" x1="70.0" y1="811.8" x2="469.6" y2="811.8"/><line class="deckl" x1="70.0" y1="818.2" x2="469.6" y2="818.2"/><line class="deckl" x1="70.0" y1="824.7" x2="469.6" y2="824.7"/><line class="deckl" x1="70.0" y1="831.2" x2="469.6" y2="831.2"/><line class="deckl" x1="70.0" y1="837.7" x2="469.6" y2="837.7"/><line class="deckl" x1="70.0" y1="844.2" x2="469.6" y2="844.2"/><line class="deckl" x1="70.0" y1="850.6" x2="469.6" y2="850.6"/><line class="deckl" x1="70.0" y1="857.1" x2="469.6" y2="857.1"/><line class="deckl" x1="70.0" y1="863.6" x2="469.6" y2="863.6"/><line class="deckl" x1="70.0" y1="870.1" x2="469.6" y2="870.1"/><line class="deckl" x1="70.0" y1="876.6" x2="469.6" y2="876.6"/><line class="deckl" x1="70.0" y1="883.0" x2="469.6" y2="883.0"/><line class="deckl" x1="70.0" y1="889.5" x2="469.6" y2="889.5"/><line class="deckl" x1="70.0" y1="896.0" x2="469.6" y2="896.0"/><line class="deckl" x1="70.0" y1="902.5" x2="469.6" y2="902.5"/><line class="deckl" x1="70.0" y1="909.0" x2="469.6" y2="909.0"/><line class="deckl" x1="70.0" y1="915.4" x2="469.6" y2="915.4"/><line class="deckl" x1="70.0" y1="921.9" x2="469.6" y2="921.9"/><line class="deckl" x1="70.0" y1="928.4" x2="469.6" y2="928.4"/><line class="deckl" x1="70.0" y1="934.9" x2="469.6" y2="934.9"/><line class="deckl" x1="70.0" y1="941.4" x2="469.6" y2="941.4"/><line class="deckl" x1="70.0" y1="947.8" x2="469.6" y2="947.8"/><line class="deckl" x1="70.0" y1="954.3" x2="469.6" y2="954.3"/><text class="ctxb" x="269.8" y="896.0" text-anchor="middle">남향 데크 약 22㎡ (7.4×3.0m)</text><text class="ctxs" x="269.8" y="917.6" text-anchor="middle">거실·식당에서 무단차로 연결</text><text class="ctx" x="572.2" y="906.8" text-anchor="middle">남측 마당 · 텃밭 · 바비큐</text><rect class="wall" x="70.0" y="410.0" width="604.8" height="388.8" /><rect class="floor f-circ" x="80.8" y="420.8" width="75.6" height="108.0" /><rect class="floor f-wet" x="161.8" y="420.8" width="97.2" height="108.0" /><rect class="floor f-wet" x="264.4" y="420.8" width="129.6" height="108.0" /><rect class="floor f-circ" x="399.4" y="420.8" width="102.6" height="143.1" /><rect class="floor f-circ" x="399.4" y="563.9" width="102.6" height="59.4" /><rect class="floor f-bed" x="507.4" y="420.8" width="156.6" height="202.5" /><rect class="floor f-kid" x="421.0" y="628.7" width="243.0" height="159.3" /><rect class="floor f-liv" x="80.8" y="534.2" width="313.2" height="253.8" /><rect class="floor f-liv" x="394.0" y="563.9" width="5.4" height="224.1" /><rect class="floor f-liv" x="399.4" y="623.3" width="16.2" height="164.7" /><rect class="openceil" x="80.8" y="534.2" width="334.8" height="253.8" /><rect class="attic-proj" x="415.6" y="472.1" width="248.4" height="264.6" /><text class="projtxt" x="661.3" y="588.2" text-anchor="end">다락 바닥 투영</text><rect class="win" x="302.2" y="410.0" width="54.0" height="10.8" /><line class="winl" x1="302.2" y1="415.4" x2="356.2" y2="415.4"/><rect class="win" x="421.0" y="410.0" width="59.4" height="10.8" /><line class="winl" x1="421.0" y1="415.4" x2="480.4" y2="415.4"/><rect class="win" x="556.0" y="410.0" width="64.8" height="10.8" /><line class="winl" x1="556.0" y1="415.4" x2="620.8" y2="415.4"/><rect class="win" x="664.0" y="464.0" width="10.8" height="75.6" /><line class="winl" x1="669.4" y1="464.0" x2="669.4" y2="539.6"/><rect class="win" x="664.0" y="690.8" width="10.8" height="37.8" /><line class="winl" x1="669.4" y1="690.8" x2="669.4" y2="728.6"/><rect class="win" x="102.4" y="788.0" width="140.4" height="10.8" /><line class="winl" x1="102.4" y1="793.4" x2="242.8" y2="793.4"/><rect class="win" x="280.6" y="788.0" width="118.8" height="10.8" /><line class="winl" x1="280.6" y1="793.4" x2="399.4" y2="793.4"/><rect class="win" x="464.2" y="788.0" width="86.4" height="10.8" /><line class="winl" x1="464.2" y1="793.4" x2="550.6" y2="793.4"/><rect class="win" x="70.0" y="561.2" width="10.8" height="59.4" /><line class="winl" x1="75.4" y1="561.2" x2="75.4" y2="620.6"/><rect class="open" x="94.3" y="410.0" width="54.0" height="10.8" /><line class="door" x1="94.3" y1="410.0" x2="94.3" y2="356.0"/><path class="swing" d="M94.3 356.0 A54.0 54.0 0 0 1 148.3 410.0"/><rect class="open" x="86.2" y="528.8" width="64.8" height="5.4" /><line class="door" x1="86.2" y1="530.4" x2="125.1" y2="530.4"/><line class="door" x1="112.1" y1="532.6" x2="151.0" y2="532.6"/><rect class="open" x="156.4" y="474.8" width="5.4" height="45.9" /><line class="door" x1="158.0" y1="474.8" x2="158.0" y2="502.3"/><line class="door" x1="160.2" y1="493.2" x2="160.2" y2="520.7"/><rect class="open" x="205.0" y="410.0" width="43.2" height="10.8" /><line class="door" x1="205.0" y1="410.0" x2="205.0" y2="366.8"/><path class="swing" d="M205.0 366.8 A43.2 43.2 0 0 1 248.2 410.0"/><rect class="open" x="345.4" y="528.8" width="45.9" height="5.4" /><line class="door" x1="345.4" y1="530.4" x2="372.9" y2="530.4"/><line class="door" x1="363.8" y1="532.6" x2="391.3" y2="532.6"/><rect class="open" x="502.0" y="572.0" width="5.4" height="45.9" /><line class="door" x1="507.4" y1="572.0" x2="553.3" y2="572.0"/><path class="swing" d="M553.3 572.0 A45.9 45.9 0 0 1 507.4 617.9"/><rect class="open" x="426.4" y="623.3" width="45.9" height="5.4" /><line class="door" x1="426.4" y1="628.7" x2="426.4" y2="674.6"/><path class="swing" d="M426.4 674.6 A45.9 45.9 0 0 0 472.3 628.7"/><line class="tread" x1="399.4" y1="563.9" x2="448.0" y2="563.9"/><line class="tread" x1="453.4" y1="563.9" x2="502.0" y2="563.9"/><line class="tread" x1="399.4" y1="550.4" x2="448.0" y2="550.4"/><line class="tread" x1="453.4" y1="550.4" x2="502.0" y2="550.4"/><line class="tread" x1="399.4" y1="536.9" x2="448.0" y2="536.9"/><line class="tread" x1="453.4" y1="536.9" x2="502.0" y2="536.9"/><line class="tread" x1="399.4" y1="523.4" x2="448.0" y2="523.4"/><line class="tread" x1="453.4" y1="523.4" x2="502.0" y2="523.4"/><line class="tread" x1="399.4" y1="509.9" x2="448.0" y2="509.9"/><line class="tread" x1="453.4" y1="509.9" x2="502.0" y2="509.9"/><line class="tread" x1="399.4" y1="496.4" x2="448.0" y2="496.4"/><line class="tread" x1="453.4" y1="496.4" x2="502.0" y2="496.4"/><line class="tread" x1="399.4" y1="482.9" x2="448.0" y2="482.9"/><line class="tread" x1="453.4" y1="482.9" x2="502.0" y2="482.9"/><line class="tread" x1="399.4" y1="469.4" x2="448.0" y2="469.4"/><line class="tread" x1="453.4" y1="469.4" x2="502.0" y2="469.4"/><line class="stairmid" x1="450.7" y1="469.4" x2="450.7" y2="563.9"/><line class="tread" x1="399.4" y1="469.4" x2="502.0" y2="469.4"/><path class="arrow" d="M423.7 558.5 L423.7 445.1 L477.7 445.1 L477.7 555.8" marker-end="url(#ah)"/><text class="up" x="423.7" y="580.1" text-anchor="middle">UP</text><text class="upsm" x="477.7" y="580.1" text-anchor="middle">다락↑</text><rect class="fur-fix" x="80.8" y="450.5" width="21.6" height="78.3" /><text class="fur" x="91.6" y="493.4" text-anchor="middle" transform="rotate(-90 91.6 493.4)">신발장</text><rect class="fur-fix" x="164.5" y="423.5" width="37.8" height="37.8" /><text class="fur" x="183.4" y="446.2" text-anchor="middle">세탁·건조</text><rect class="fur-fix" x="232.0" y="458.6" width="27.0" height="32.4" /><text class="fur" x="245.5" y="478.6" text-anchor="middle">보일러</text><rect class="fur-fix" x="223.9" y="499.1" width="35.1" height="29.7" /><text class="fur" x="241.4" y="517.7" text-anchor="middle">싱크</text><rect class="fur-wet" x="264.4" y="420.8" width="64.8" height="54.0" /><text class="fur" x="296.8" y="451.6" text-anchor="middle">무단차 샤워</text><rect class="fur-fix" x="337.3" y="420.8" width="54.0" height="27.0" /><text class="fur" x="364.3" y="438.1" text-anchor="middle">세면대</text><rect class="fur-fix" x="269.8" y="488.3" width="24.3" height="40.5" /><text class="fur" x="282.0" y="512.3" text-anchor="middle" transform="rotate(-90 282.0 512.3)">변기</text><rect class="fur-fix" x="199.6" y="534.2" width="64.8" height="35.1" /><text class="fur" x="232.0" y="555.5" text-anchor="middle">냉장고·팬트리</text><rect class="fur-fix" x="264.4" y="534.2" width="75.6" height="32.4" /><text class="fur" x="302.2" y="554.2" text-anchor="middle">싱크대</text><rect class="fur-fix" x="275.2" y="620.6" width="124.2" height="48.6" /><text class="fur" x="337.3" y="648.7" text-anchor="middle">아일랜드(쿡탑)</text><rect class="fur-loose" x="291.4" y="712.4" width="97.2" height="48.6" /><text class="fur" x="340.0" y="740.5" text-anchor="middle">6인 식탁</text><rect class="fur-loose" x="183.4" y="631.4" width="48.6" height="118.8" /><text class="fur" x="207.7" y="694.6" text-anchor="middle">소파</text><rect class="fur-fix" x="80.8" y="647.6" width="21.6" height="86.4" /><text class="fur" x="91.6" y="694.6" text-anchor="middle" transform="rotate(-90 91.6 694.6)">TV·수납</text><rect class="fur-loose" x="545.2" y="420.8" width="81.0" height="108.0" /><text class="fur" x="585.7" y="478.6" text-anchor="middle">퀸 침대</text><rect class="fur-fix" x="556.0" y="590.9" width="108.0" height="32.4" /><text class="fur" x="610.0" y="610.9" text-anchor="middle">붙박이장</text><rect class="fur-loose" x="556.0" y="628.7" width="108.0" height="54.0" /><text class="fur" x="610.0" y="659.5" text-anchor="middle">싱글침대</text><rect class="fur-loose" x="556.0" y="734.0" width="108.0" height="54.0" /><text class="fur" x="610.0" y="764.8" text-anchor="middle">싱글침대</text><rect class="fur-loose" x="421.0" y="680.0" width="32.4" height="54.0" /><text class="fur" x="437.2" y="710.8" text-anchor="middle" transform="rotate(-90 437.2 710.8)">책상</text><rect class="fur-loose" x="421.0" y="734.0" width="32.4" height="54.0" /><text class="fur" x="437.2" y="764.8" text-anchor="middle" transform="rotate(-90 437.2 764.8)">책상</text><rect class="fur-fix" x="480.4" y="628.7" width="70.2" height="32.4" /><text class="fur" x="515.5" y="648.7" text-anchor="middle">옷장</text><rect class="chair" x="295.7" y="685.4" width="23.8" height="24.3" /><rect class="chair" x="328.1" y="685.4" width="23.8" height="24.3" /><rect class="chair" x="360.5" y="685.4" width="23.8" height="24.3" /><rect class="chair" x="295.7" y="763.7" width="23.8" height="21.6" /><rect class="chair" x="328.1" y="763.7" width="23.8" height="21.6" /><rect class="chair" x="360.5" y="763.7" width="23.8" height="21.6" /><line class="drain" x1="267.1" y1="470.5" x2="326.5" y2="470.5"/><text class="rname" x="129.4" y="464.0" text-anchor="middle">현관</text><text class="rarea" x="129.4" y="481.3" text-anchor="middle">2.8㎡</text><text class="rname" x="191.5" y="482.9" text-anchor="middle">세탁·건조/기계</text><text class="rarea" x="191.5" y="500.2" text-anchor="middle">3.6㎡</text><text class="rname" x="345.4" y="482.9" text-anchor="middle">공용욕실</text><text class="rarea" x="345.4" y="500.2" text-anchor="middle">4.8㎡</text><text class="rname" x="593.8" y="553.1" text-anchor="middle">부부침실</text><text class="rarea" x="593.8" y="570.4" text-anchor="middle">10.9㎡ · 2.9×3.75</text><text class="rname" x="504.7" y="704.3" text-anchor="middle">자녀 공동방</text><text class="rarea" x="504.7" y="721.6" text-anchor="middle">13.3㎡ · 4.5×2.95</text><text class="rname" x="450.7" y="601.7" text-anchor="middle">홀</text><text class="rname" x="156.4" y="590.9" text-anchor="middle">거실</text><text class="rsub" x="156.4" y="608.2" text-anchor="middle">박공 오픈천장</text><text class="rname" x="340.0" y="693.5" text-anchor="middle">식당</text><text class="rname" x="302.2" y="605.5" text-anchor="middle">주방</text><text class="rarea" x="242.8" y="777.2" text-anchor="middle">LDK 28.6㎡</text><line class="dim" x1="70.0" y1="326.3" x2="674.8" y2="326.3"/><line class="dimtick" x1="66.8" y1="329.5" x2="73.2" y2="323.1"/><line class="dimtick" x1="671.6" y1="329.5" x2="678.0" y2="323.1"/><text class="dimtxt" x="372.4" y="322.0" text-anchor="middle">11.2</text><line class="dim" x1="40.3" y1="410.0" x2="40.3" y2="798.8"/><line class="dimtick" x1="37.1" y1="413.2" x2="43.5" y2="406.8"/><line class="dimtick" x1="37.1" y1="802.0" x2="43.5" y2="795.6"/><text class="dimtxt" x="36.0" y="604.4" text-anchor="middle" transform="rotate(-90 36.0 604.4)">7.2</text><line class="dim" x1="80.8" y1="345.2" x2="156.4" y2="345.2"/><line class="dimtick" x1="77.6" y1="348.4" x2="84.0" y2="342.0"/><line class="dimtick" x1="153.2" y1="348.4" x2="159.6" y2="342.0"/><text class="dimtxt" x="118.6" y="340.9" text-anchor="middle">1.4</text><line class="dim" x1="161.8" y1="345.2" x2="259.0" y2="345.2"/><line class="dimtick" x1="158.6" y1="348.4" x2="165.0" y2="342.0"/><line class="dimtick" x1="255.8" y1="348.4" x2="262.2" y2="342.0"/><text class="dimtxt" x="210.4" y="340.9" text-anchor="middle">1.8</text><line class="dim" x1="264.4" y1="345.2" x2="394.0" y2="345.2"/><line class="dimtick" x1="261.2" y1="348.4" x2="267.6" y2="342.0"/><line class="dimtick" x1="390.8" y1="348.4" x2="397.2" y2="342.0"/><text class="dimtxt" x="329.2" y="340.9" text-anchor="middle">2.4</text><line class="dim" x1="399.4" y1="345.2" x2="502.0" y2="345.2"/><line class="dimtick" x1="396.2" y1="348.4" x2="402.6" y2="342.0"/><line class="dimtick" x1="498.8" y1="348.4" x2="505.2" y2="342.0"/><text class="dimtxt" x="450.7" y="340.9" text-anchor="middle">1.9</text><line class="dim" x1="507.4" y1="345.2" x2="664.0" y2="345.2"/><line class="dimtick" x1="504.2" y1="348.4" x2="510.6" y2="342.0"/><line class="dimtick" x1="660.8" y1="348.4" x2="667.2" y2="342.0"/><text class="dimtxt" x="585.7" y="340.9" text-anchor="middle">2.9</text><line class="dim" x1="80.8" y1="985.1" x2="415.6" y2="985.1"/><line class="dimtick" x1="77.6" y1="988.3" x2="84.0" y2="981.9"/><line class="dimtick" x1="412.4" y1="988.3" x2="418.8" y2="981.9"/><text class="dimtxt" x="248.2" y="980.8" text-anchor="middle">6.2 (LDK 내법)</text><line class="dim" x1="421.0" y1="985.1" x2="664.0" y2="985.1"/><line class="dimtick" x1="417.8" y1="988.3" x2="424.2" y2="981.9"/><line class="dimtick" x1="660.8" y1="988.3" x2="667.2" y2="981.9"/><text class="dimtxt" x="542.5" y="980.8" text-anchor="middle">4.5</text><line class="dim" x1="699.1" y1="420.8" x2="699.1" y2="623.3"/><line class="dimtick" x1="695.9" y1="424.0" x2="702.3" y2="417.6"/><line class="dimtick" x1="695.9" y1="626.5" x2="702.3" y2="620.1"/><text class="dimtxt" x="694.8" y="522.0" text-anchor="middle" transform="rotate(-90 694.8 522.0)">3.75</text><line class="dim" x1="699.1" y1="628.7" x2="699.1" y2="788.0"/><line class="dimtick" x1="695.9" y1="631.9" x2="702.3" y2="625.5"/><line class="dimtick" x1="695.9" y1="791.2" x2="702.3" y2="784.8"/><text class="dimtxt" x="694.8" y="708.4" text-anchor="middle" transform="rotate(-90 694.8 708.4)">2.95</text><line class="dim" x1="56.5" y1="420.8" x2="56.5" y2="528.8"/><line class="dimtick" x1="53.3" y1="424.0" x2="59.7" y2="417.6"/><line class="dimtick" x1="53.3" y1="532.0" x2="59.7" y2="525.6"/><text class="dimtxt" x="52.2" y="474.8" text-anchor="middle" transform="rotate(-90 52.2 474.8)">2.0</text><line class="dim" x1="56.5" y1="534.2" x2="56.5" y2="788.0"/><line class="dimtick" x1="53.3" y1="537.4" x2="59.7" y2="531.0"/><line class="dimtick" x1="53.3" y1="791.2" x2="59.7" y2="784.8"/><text class="dimtxt" x="52.2" y="661.1" text-anchor="middle" transform="rotate(-90 52.2 661.1)">4.7</text><g class="north"><circle cx="696.4" cy="86.0" r="17" class="nc"/><path d="M696.4 72.0 L703.4 95.0 L696.4 90.0 L689.4 95.0 Z" class="na"/><text x="696.4" y="65.0" text-anchor="middle" class="ntxt">N</text></g><defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="ahp"/></marker></defs><text class="note" x="10.6" y="1028.3" text-anchor="start">치수 단위 m · 벽 중심선이 아닌 내법(실 안쪽) 기준 · 외벽 0.2 / 내벽 0.1 개념값</text></svg></div>
+  <div class="legend">
+    <span><i style="background:var(--f-liv)"></i>거실·식당·주방</span><span><i style="background:var(--f-bed)"></i>부부침실</span>
+    <span><i style="background:var(--f-kid)"></i>자녀공간·다락</span><span><i style="background:var(--f-wet)"></i>습식·서비스</span>
+    <span><i style="background:var(--f-circ)"></i>현관·계단·홀</span>
+    <span><i style="border:1.4px dashed var(--pine);background:none"></i>다락 바닥 투영</span>
+    <span><i style="border:1px dotted var(--timber);background:none"></i>박공 오픈천장</span>
+    <span><i style="border:1px dashed var(--fur);background:none"></i>이동 가구</span>
+  </div>
+  <div class="grid2">
+    <div class="callout"><h3>동선</h3><p>현관 → 중문 → 주방 작업통로(1.0m) → 홀 → 부부침실·자녀방·계단.
+    침실문 두 개가 모두 홀 안쪽을 향해 거실 소파에서는 보이지 않습니다. 대신 현관과 침실을 잇는 주동선이 주방 작업통로를 겸하므로, 요리 중 통행이 겹치는 것은 감수한 선택입니다.</p></div>
+    <div class="callout"><h3>채광·통풍</h3><p>거실 남측 2.6m 미닫이와 서측 창, 서측 박공 고창이 남서 모서리를 엽니다.
+    남측 거실창과 북측 현관·세탁실 개구부, 동측 침실창이 맞통풍을 만듭니다. 욕실은 북측 고창과 기계환기를 함께 둡니다.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="code">C</span>다락 개념 평면도</h2>
+  <div class="sheet"><svg viewBox="0 0 760 520" role="img" aria-label="다락 개념 평면도" xmlns="http://www.w3.org/2000/svg"><title>다락 개념 평면도</title><rect class="roofarea" x="70.0" y="70.0" width="604.8" height="388.8" /><text class="ctx" x="242.8" y="280.6" text-anchor="middle">거실·식당 상부 오픈 (박공 천장까지)</text><text class="ctxs" x="242.8" y="299.5" text-anchor="middle">서측 박공면 고창</text><rect class="lowzone" x="415.6" y="80.8" width="248.4" height="51.3" /><rect class="lowzone" x="415.6" y="396.7" width="248.4" height="51.3" /><text class="ctxs" x="583.0" y="110.5" text-anchor="middle">무릎벽 뒤 수납 (높이 1.17m 이하)</text><text class="ctxs" x="583.0" y="431.8" text-anchor="middle">무릎벽 뒤 수납 (높이 1.17m 이하)</text><rect class="floor f-kid" x="415.6" y="132.1" width="248.4" height="264.6" /><rect class="void" x="415.6" y="132.1" width="86.4" height="91.8" /><text class="ctxs" x="434.5" y="178.0" text-anchor="middle">오픈</text><rect class="tall" x="502.0" y="181.1" width="162.0" height="166.6" /><rect class="tall" x="415.6" y="223.9" width="86.4" height="123.8" /><text class="projtxt" x="655.9" y="197.3" text-anchor="end">천장고 1.8m 이상 구간</text><line class="tread" x1="453.4" y1="223.9" x2="502.0" y2="223.9"/><line class="tread" x1="453.4" y1="210.4" x2="502.0" y2="210.4"/><line class="tread" x1="453.4" y1="196.9" x2="502.0" y2="196.9"/><line class="tread" x1="453.4" y1="183.4" x2="502.0" y2="183.4"/><line class="tread" x1="453.4" y1="169.9" x2="502.0" y2="169.9"/><line class="tread" x1="453.4" y1="156.4" x2="502.0" y2="156.4"/><line class="tread" x1="453.4" y1="142.9" x2="502.0" y2="142.9"/><line class="tread" x1="453.4" y1="129.4" x2="502.0" y2="129.4"/><path class="arrow" d="M477.7 145.6 L477.7 242.8" marker-end="url(#ah2)"/><line class="rail" x1="415.6" y1="223.9" x2="415.6" y2="396.7"/><line class="rail" x1="415.6" y1="132.1" x2="453.4" y2="132.1"/><line class="rail" x1="415.6" y1="132.1" x2="415.6" y2="223.9"/><line class="rail" x1="450.7" y1="132.1" x2="450.7" y2="223.9"/><text class="projtxt" x="404.8" y="318.4" text-anchor="end">난간 1.2m (거실 조망)</text><rect class="outline" x="70.0" y="70.0" width="604.8" height="388.8" /><rect class="win" x="664.0" y="226.6" width="10.8" height="75.6" /><text class="ctxs" x="658.6" y="218.5" text-anchor="end">동측 박공창</text><rect class="skylight" x="566.8" y="232.0" width="54.0" height="32.4" /><text class="ctxs" x="593.8" y="277.9" text-anchor="middle">천창(선택)</text><text class="rname" x="556.0" y="318.4" text-anchor="middle">자녀 놀이·취미 다락</text><text class="rarea" x="556.0" y="335.7" text-anchor="middle">실사용 바닥 19.8㎡ (6.0평)</text><line class="dim" x1="415.6" y1="53.8" x2="664.0" y2="53.8"/><line class="dimtick" x1="412.4" y1="57.0" x2="418.8" y2="50.6"/><line class="dimtick" x1="660.8" y1="57.0" x2="667.2" y2="50.6"/><text class="dimtxt" x="539.8" y="49.5" text-anchor="middle">4.6</text><line class="dim" x1="701.8" y1="132.1" x2="701.8" y2="396.7"/><line class="dimtick" x1="698.6" y1="135.3" x2="705.0" y2="128.9"/><line class="dimtick" x1="698.6" y1="399.9" x2="705.0" y2="393.5"/><text class="dimtxt" x="697.5" y="264.4" text-anchor="middle" transform="rotate(-90 697.5 264.4)">4.9</text><line class="dim" x1="70.0" y1="34.9" x2="674.8" y2="34.9"/><line class="dimtick" x1="66.8" y1="38.1" x2="73.2" y2="31.7"/><line class="dimtick" x1="671.6" y1="38.1" x2="678.0" y2="31.7"/><text class="dimtxt" x="372.4" y="30.6" text-anchor="middle">11.2</text><g class="north"><circle cx="37.6" cy="480.4" r="17" class="nc"/><path d="M37.6 466.4 L44.6 489.4 L37.6 484.4 L30.6 489.4 Z" class="na"/><text x="37.6" y="459.4" text-anchor="middle" class="ntxt">N</text></g><defs><marker id="ah2" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="ahp"/></marker></defs></svg></div>
+  <p>다락은 홀·부부침실·자녀방 위(x ≥ 6.4m)에만 놓여 거실 오픈천장과 겹치지 않습니다. 서쪽 끝은 1.2m 난간으로 막아 거실을 내려다보는 발코니처럼 쓰고,
+  남북 양 끝은 1.17m 무릎벽을 세워 그 뒤를 수납으로 씁니다. 옅은 녹색 띠가 성인이 서서 쓸 수 있는 천장고 1.8m 이상 구간입니다.</p>
+</section>
+
+<section>
+  <h2><span class="code">D</span>박공 단면 개념도</h2>
+  <div style="display:grid;gap:16px">
+    <div class="sheet"><h3 style="margin-bottom:8px">남북 횡단면 · 부부침실/자녀방/다락</h3><svg viewBox="0 0 720 440" role="img" aria-label="다락 횡단면" xmlns="http://www.w3.org/2000/svg"><title>남북 횡단면(다락 통과)</title><rect class="ground" x="-10.0" y="387.5" width="560.0" height="25.0"/><rect class="wallsec" x="90.0" y="380.0" width="360.0" height="12.5"/><rect class="wallsec" x="90.0" y="220.0" width="10.0" height="160.0"/><rect class="wallsec" x="440.0" y="220.0" width="10.0" height="160.0"/><polygon class="roofsec" points="70.0,241.0 270.0,101.0 470.0,241.0 470.0,219.6 270.0,79.6 70.0,219.6"/><rect class="slab" x="100.0" y="245.0" width="340.0" height="15.0"/><line class="knee" x1="147.5" y1="245.0" x2="147.5" y2="186.8"/><line class="knee" x1="392.5" y1="245.0" x2="392.5" y2="186.8"/><rect class="tallsec" x="192.9" y="101.0" width="154.3" height="54.0"/><line class="h18" x1="192.9" y1="155.0" x2="347.1" y2="155.0"/><text class="sectxt" x="270.0" y="151.0" text-anchor="middle">다락 바닥+1.8m</text><rect class="wallsec" x="287.5" y="260.0" width="5.0" height="120.0"/><line class="ceil" x1="100.0" y1="260.0" x2="440.0" y2="260.0"/><text class="secroom" x="195.0" y="325.0" text-anchor="middle">부부침실</text><text class="secroom" x="365.0" y="325.0" text-anchor="middle">자녀 공동방</text><text class="secroom" x="270.0" y="212.5" text-anchor="middle">자녀 놀이 다락</text><line class="dimtick" x1="495.0" y1="380.0" x2="505.0" y2="380.0"/><text class="sectxt" x="512.5" y="382.5" text-anchor="start">FL ±0</text><line class="dimtick" x1="495.0" y1="260.0" x2="505.0" y2="260.0"/><text class="sectxt" x="512.5" y="262.5" text-anchor="start">천장 2.40</text><line class="dimtick" x1="495.0" y1="245.0" x2="505.0" y2="245.0"/><text class="sectxt" x="512.5" y="247.5" text-anchor="start">다락 FL +2.70</text><line class="dimtick" x1="495.0" y1="220.0" x2="505.0" y2="220.0"/><text class="sectxt" x="512.5" y="222.5" text-anchor="start">지붕하부@외벽 +3.20</text><line class="dimtick" x1="495.0" y1="101.0" x2="505.0" y2="101.0"/><text class="sectxt" x="512.5" y="103.5" text-anchor="start">용마루 하부 +5.58</text><line class="dim" x1="500.0" y1="380.0" x2="500.0" y2="101.0"/><text class="sectxt" x="80.0" y="405.0" text-anchor="start">GL −0.15</text><text class="secdir" x="60.0" y="407.5" text-anchor="middle">북</text><text class="secdir" x="480.0" y="407.5" text-anchor="middle">남</text><text class="sectxt" x="135.0" y="83.5" text-anchor="middle">물매 약 35°</text></svg></div>
+    <div class="sheet"><h3 style="margin-bottom:8px">동서 종단면 · 용마루 아래</h3><svg viewBox="0 0 720 420" role="img" aria-label="동서 종단면" xmlns="http://www.w3.org/2000/svg"><title>동서 종단면(용마루 아래)</title><rect class="ground" x="10.0" y="367.5" width="640.0" height="25.0"/><rect class="wallsec" x="50.0" y="360.0" width="560.0" height="12.5"/><rect class="wallsec" x="50.0" y="81.0" width="10.0" height="279.0"/><rect class="wallsec" x="600.0" y="81.0" width="10.0" height="279.0"/><rect class="roofsec" x="35.0" y="63.5" width="590.0" height="17.5"/><rect class="slab" x="370.0" y="225.0" width="230.0" height="15.0"/><rect class="wallsec" x="450.0" y="240.0" width="5.0" height="120.0"/><line class="rail" x1="370.0" y1="225.0" x2="370.0" y2="165.0"/><rect class="winsec" x="50.0" y="110.0" width="10.0" height="80.0"/><rect class="winsec" x="600.0" y="130.0" width="10.0" height="60.0"/><rect class="proj" x="80.0" y="240.0" width="130.0" height="120.0"/><text class="secroom" x="210.0" y="200.0" text-anchor="middle">높은 거실 · 식당</text><text class="sectxt" x="210.0" y="220.0" text-anchor="middle">천장 최고 약 5.6m (용마루 하부)</text><text class="secroom" x="410.0" y="300.0" text-anchor="middle">홀</text><text class="secroom" x="530.0" y="300.0" text-anchor="middle">부부침실</text><text class="secroom" x="485.0" y="190.0" text-anchor="middle">놀이 다락</text><text class="sectxt" x="55.0" y="100.0" text-anchor="start">서측 고창</text><text class="sectxt" x="367.5" y="157.5" text-anchor="end">난간</text><text class="sectxt" x="655.0" y="362.5" text-anchor="start">±0</text><line class="dimtick" x1="637.5" y1="360.0" x2="650.0" y2="360.0"/><text class="sectxt" x="655.0" y="242.5" text-anchor="start">2.40</text><line class="dimtick" x1="637.5" y1="240.0" x2="650.0" y2="240.0"/><text class="sectxt" x="655.0" y="227.5" text-anchor="start">2.70</text><line class="dimtick" x1="637.5" y1="225.0" x2="650.0" y2="225.0"/><text class="sectxt" x="655.0" y="83.5" text-anchor="start">5.58</text><line class="dimtick" x1="637.5" y1="81.0" x2="650.0" y2="81.0"/><text class="secdir" x="40.0" y="397.5" text-anchor="middle">서</text><text class="secdir" x="620.0" y="397.5" text-anchor="middle">동</text></svg></div>
+  </div>
+  <div class="callout">
+    <h3>다락 높이와 면적 산입</h3>
+    <p>이 단면에서 다락 천장고는 무릎벽 1.17m, 용마루 아래 2.88m, 단순 평균 약 2.02m입니다.
+    「건축법 시행령」 제119조는 층고 1.5m(경사지붕은 1.8m) 이하 다락을 바닥면적에서 제외하는데, 경사지붕 다락의 층고를 평균높이로 볼지 최고높이로 볼지는 관할 허가권자 판단을 확인해야 합니다.
+    어느 해석이든 이번 단면은 1.8m를 넘으므로 <b>다락이 연면적에 산입된다고 보고</b> 계획하는 것이 안전합니다(연면적 100.5㎡, 용적률 15.2%, 자연녹지 상한 안).</p>
+    <p>면적 제외를 우선하려면 지붕하부 높이를 낮춰야 하는데, 그러면 U자 계단 참의 머리높이(현재 약 2.17m)가 2.0m 아래로 떨어집니다. 이 교환관계를 건축사와 단면으로 비교해 정해야 합니다.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="code">E</span>방별 순면적과 합계 검산</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>공간</th><th style="text-align:right">도면 순면적 ㎡</th><th style="text-align:right">브리프 권장 ㎡</th><th style="text-align:right">차이</th><th>설계 포인트</th></tr></thead>
+    <tbody><tr><td>거실·식당·주방</td><td class='n'>28.59</td><td class='n'>30.0</td><td class='n diff'>-1.4</td><td>거실 약 2.9m폭 + 식당 + 대면형 아일랜드 주방, 오픈천장</td></tr><tr><td>부부침실</td><td class='n'>10.88</td><td class='n'>11.0</td><td class='n '>-0.1</td><td>퀸 침대, 붙박이장 2.0m(목표 2.4m에서 축소), 동측창</td></tr><tr><td>자녀 공동방</td><td class='n'>13.28</td><td class='n'>14.0</td><td class='n diff'>-0.7</td><td>싱글침대 2 + 책상 2(1.0×0.6) + 옷장, 중앙 놀이공간</td></tr><tr><td>공용욕실</td><td class='n'>4.80</td><td class='n'>4.8</td><td class='n '>+0.0</td><td>무단차 샤워 1.2×1.0, 미닫이문, 변기·샤워 옆 보강벽</td></tr><tr><td>세탁·건조/기계</td><td class='n'>3.60</td><td class='n'>4.7</td><td class='n diff'>-1.1</td><td>세탁·건조 적층 + 보일러 + 다용도 싱크, 현관과 외부 양쪽에서 출입</td></tr><tr><td>현관</td><td class='n'>2.80</td><td class='n'></td><td class='n '></td><td>신발·외투장, 트렌치 배수로 무단차, 중문 미닫이</td></tr><tr><td>홀</td><td class='n'>2.09</td><td class='n'></td><td class='n '></td><td>부부침실·자녀방·계단 출입을 모아 거실에서 침실문이 정면으로 보이지 않게 함</td></tr><tr><td>U자 계단</td><td class='n'>5.04</td><td class='n'></td><td class='n '></td><td>1층 바닥 투영, 계단 하부(첫 흐름 아래) 수납</td></tr>
+    <tr class="sum"><td>1층 순면적 합계</td><td class="n">71.06</td><td class="n">74.5</td><td class="n diff">-3.4</td><td>실 안쪽(내법) 면적의 합</td></tr>
+    <tr><td>외벽 + 내벽 면적</td><td class="n">9.58</td><td class="n"></td><td class="n"></td><td>외벽 0.2m 7.20㎡ + 내벽 0.1m 2.38㎡</td></tr>
+    <tr class="sum"><td>건축면적(외곽 11.2×7.2)</td><td class="n">80.64</td><td class="n">80.6</td><td class="n"></td><td>24.4평</td></tr>
+    <tr><td>다락 실사용 바닥</td><td class="n">19.82</td><td class="n">19.8</td><td class="n">+0.0</td><td>4.6×4.9m − 계단 오픈부 1.6×1.7m</td></tr>
+    </tbody></table></div>
+  <div class="callout">
+    <h3>브리프 수치 정정</h3>
+    <p>브리프의 권장 순면적 합계 74.5㎡는 외곽 11.2×7.2m 안에 들어가지 않습니다. 외벽 0.2m만 빼도 실내는 10.8×6.8 = 73.44㎡이고, 내벽을 빼면 실제 순면적은 약 71.1㎡입니다.
+    그래서 외곽 치수를 지키는 대신 자녀방(−0.7㎡), LDK, 세탁실, 현관을 조금씩 줄였습니다. 권장 면적을 모두 지키려면 외곽을 약 12.0×7.2m(86.4㎡, 26.1평)로 늘려야 하고, 공사비도 그만큼 늘어납니다.
+    실제 벽 두께는 구조·단열 방식에 따라 0.25~0.35m까지 두꺼워질 수 있어 순면적은 더 줄어들 수 있습니다.</p>
+  </div>
+  <h3>자체 검증 (모두 통과)</h3>
+  <ul class="checks"><li><span class='pill ok'>OK</span><span>실 + 벽체가 11.2×7.2m 외곽을 빈틈·중복 없이 채움 (5cm 격자 32256칸 중 오류 0칸)</span></li><li><span class='pill ok'>OK</span><span>순면적 71.06㎡ + 벽체 9.57㎡ = 건축면적 80.64㎡</span></li><li><span class='pill ok'>OK</span><span>모든 가구가 해당 실 경계 안에 배치됨</span></li><li><span class='pill ok'>OK</span><span>가구끼리 겹침 없음</span></li><li><span class='pill ok'>OK</span><span>문 개폐 영역에 가구 없음</span></li><li><span class='pill ok'>OK</span><span>주방 작업통로 = 현관→홀 주동선 폭 1.00m (싱크대~아일랜드)</span></li><li><span class='pill ok'>OK</span><span>소파 등~아일랜드 사이 통로 0.80m (거실↔주방)</span></li><li><span class='pill ok'>OK</span><span>아일랜드~식탁 사이 0.80m (의자 착석 공간, 통행로 아님)</span></li><li><span class='pill ok'>OK</span><span>홀 폭 1.10m, 부부침실·자녀방·계단 출입 모두 홀에서</span></li><li><span class='pill ok'>OK</span><span>부부침실 침대 발치~붙박이장 1.15m, 침대 옆 최소 0.70m</span></li><li><span class='pill ok'>OK</span><span>자녀방 침대 사이 0.95m, 책상~침대 사이 놀이공간 1.9m 폭</span></li><li><span class='pill ok'>OK</span><span>U자 계단: 단높이 169mm × 16단, 디딤판 250mm, 한 흐름 1.75m + 참 0.90m = 2.65m, 유효폭 0.90m</span></li><li><span class='pill ok'>OK</span><span>참(높이 1.35m) 보행선 위 지붕까지 머리높이 2.17m</span></li><li><span class='pill ok'>OK</span><span>계단 상부 도착부 머리높이 2.35m</span></li><li><span class='pill ok'>OK</span><span>다락 하부 홀·침실 천장고 2.40m (다락 바닥구조 0.30m)</span></li><li><span class='pill ok'>OK</span><span>다락 실사용 바닥 19.82㎡ = 6.00평</span></li><li><span class='pill ok'>OK</span><span>다락은 x≥6.4m(홀·침실 상부)에만 있어 거실 오픈천장(x≤6.4m)과 겹치지 않음</span></li><li><span class='pill ok'>OK</span><span>현관·욕실·데크 모두 FL±0 기준 무단차(현관은 트렌치 배수, 욕실은 바닥 슬로프+트렌치)</span></li></ul>
+</section>
+
+<section>
+  <h2><span class="code">F</span>미확정 사항과 건축사 확인 체크리스트</h2>
+  <div class="grid2">
+    <div class="tbl" style="padding:14px 16px"><h3>토지·법규</h3><ul class="list">
+      <li>토지이용계획확인서: 자연녹지 여부, 지구단위계획, 기타 규제</li>
+      <li>소재지 조례의 건폐율·용적률 (자연녹지 20% / 50~100% 범위)</li>
+      <li>도로의 법적 지위와 폭, 접도 길이(맹지·현황도로 여부)</li>
+      <li>농지·산지 여부와 전용 가능성, 개발행위허가</li>
+      <li>상수도·관정, 오수관·정화조, 전기 인입 위치와 견적</li>
+      <li>다락 층고 산정 방식(평균 vs 최고)과 바닥면적 산입 여부</li>
+    </ul></div>
+    <div class="tbl" style="padding:14px 16px"><h3>설계·시공</h3><ul class="list">
+      <li>구조 방식(경량목구조/철근콘크리트 등)에 따른 실제 벽 두께와 순면적 재산정</li>
+      <li>다락 바닥이 걸리는 경간(부부침실 2.9m, 자녀방 4.5m)의 보·내력벽 계획</li>
+      <li>계단 단높이 169mm·디딤 250mm·참 머리높이 확인, 다락 난간 높이·간격</li>
+      <li>남·서향 대형창 여름 차양(처마 0.6m + 외부 차양), 에너지절약계획 대상 여부</li>
+      <li>오픈천장 거실의 난방 부하·결로·환기, 다락 냉난방 방식</li>
+      <li>욕실 무단차 배수 구배와 방수 상세, 보강벽 위치</li>
+      <li>기계실 보일러 급배기 경로와 외부 점검문, 동파 대책</li>
+      <li>지반조사 필요성, 우수 배수 방향, 성토·옹벽 여부</li>
+    </ul></div>
+  </div>
+</section>
+
+<footer>
+  <p>법규 근거: 「건축법 시행령」 제119조 제1항 제3호(다락: 층고 1.5m, 경사지붕 1.8m 이하 바닥면적 불산입), 「국토의 계획 및 이용에 관한 법률 시행령」 제84조·제85조(자연녹지 건폐율 20%, 용적률 50~100% 이하 범위에서 조례).
+  조문은 공개 자료로 확인했으며, 실제 적용은 소재지 조례와 개별 대지 조건에 따라 달라집니다.</p>
+  <p>이 문서는 건축주와 건축사의 첫 상담을 위한 개념안이며 구조·설비·에너지·소방·인허가 검토를 대신하지 않습니다. 도면을 그대로 시공에 쓰면 안 됩니다.</p>
+</footer>
+</div>
